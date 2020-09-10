@@ -1,13 +1,17 @@
 package com.xtremsystems.gads2020leaderboard.submit
 
+import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.xtremsystems.gads2020leaderboard.R
 import kotlinx.android.synthetic.main.activity_submit.*
 
@@ -21,10 +25,20 @@ class SubmitActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setHomeButtonEnabled(true)
+
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
+        val drawable = toolbar.navigationIcon
+
+        drawable!!.setColorFilter(
+            ContextCompat.getColor(this, R.color.colorAccent),
+            PorterDuff.Mode.SRC_ATOP
+        )
 
         btnSubmit.setOnClickListener {
             showConfirmDialog()
         }
+
     }
 
     private fun showConfirmDialog() {
@@ -87,5 +101,19 @@ class SubmitActivity : AppCompatActivity() {
 
         alertDialog?.show()
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+
+        }
     }
 }
