@@ -3,6 +3,7 @@ package com.xtremsystems.gads2020leaderboard.submit
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -65,7 +66,8 @@ class SubmitActivity : AppCompatActivity() {
                 showSuccess()
             })
 
-            submitViewModel.errorMessage.observe(this, {
+            submitViewModel.errorMessage.observe(this, {message ->
+                Log.d("SunError", message)
                 showError()
             })
         }

@@ -1,5 +1,6 @@
 package com.xtremsystems.gads2020leaderboard.submit
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -18,6 +19,7 @@ class SubmitViewModel : ViewModel() {
     }
 
     fun submitProject(firstName: String, surname: String, email: String, link: String) {
+        Log.d("SunError", firstName+surname+email+link)
 
         viewModelScope.launch {
 
