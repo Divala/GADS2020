@@ -1,3 +1,2 @@
 # GADS2020
-![Screenshot_20200910-134104_GADS 2020 Leaderboard](Screenshot_20200910-134104_GADS 2020 Leaderboard.jpg)
-
+https://github.com/Divala/GADS2020/blob/master/screenshots/Screenshot_20200910-134104_GADS%202020%20Leaderboard.jpg
